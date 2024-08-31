@@ -1,0 +1,55 @@
+﻿<Window x:Class="FinalXonixWPF.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:FinalXonixWPF"
+        mc:Ignorable="d"
+        Title="Xonix" Height="700" Width="700"
+        Loaded="Window_Loaded"
+        KeyDown="Window_KeyDown">
+    <Grid Name="gGameGrid" Background = "{StaticResource BackgroundColor}">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+        </Grid.RowDefinitions>
+
+        <TextBlock x:Name="tbInfo"
+                   FontSize="30"
+                   Foreground="AntiqueWhite"
+                   HorizontalAlignment="Center"     
+                   >Level: 1, Lifes: 3</TextBlock>
+
+        <Image x:Name="HiddenImage"
+               Width="600"
+               Height="600"
+               Grid.Row="1"
+               HorizontalAlignment="Center"
+               VerticalAlignment="Center"
+               ></Image>
+        
+        <Canvas x:Name="cCanvas"
+                Grid.Row="1"
+                Height="600"
+                Width="600"
+                HorizontalAlignment="Center"
+                VerticalAlignment="Center"
+                Loaded="cCanvas_Loaded"
+                ></Canvas>
+
+        <Border x:Name = "Overlay"
+                Grid.Row = "1"
+                Background="{StaticResource OverlayColor}"
+                Height="600"
+                Width="600">
+            <TextBlock x:Name="OverlayText"
+                       Text="Press esc to start"
+                       FontSize="36"
+                       Foreground="AntiqueWhite"
+                       VerticalAlignment="Center"
+                       HorizontalAlignment="Center"
+                    ></TextBlock>
+
+        </Border>
+    </Grid>
+</Window>
